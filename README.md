@@ -1,4 +1,4 @@
-# Vue Drum Machine (Using Harry Potter API as tutorial)
+# Vue Drum Machine (Study Project in Vue)
 
 ## Project setup
 ```
