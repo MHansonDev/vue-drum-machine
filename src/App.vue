@@ -1,16 +1,16 @@
 <template>
   <div id="app">
-    <Caps />
+    <Machine />
   </div>
 </template>
 
 <script>
-import Caps from './components/Caps.vue'
+import Machine from './components/Machine.vue'
 
 export default {
   name: 'app',
   components: {
-    Caps
+    Machine
   }
 }
 </script>
