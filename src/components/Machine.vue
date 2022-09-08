@@ -4,37 +4,37 @@
 
         <div class="sampleContainer">
             <div class="row">
-                <button v-on:click='playBass'>
+                <div v-on:click='playBass' class="samplePad">
                     Bass
-                </button>
-                <button v-on:click='playSnare'>
+                </div>
+                <div v-on:click='playSnare' class="samplePad">
                     Snare
-                </button>
-                <button v-on:click='playHiHatClosed'>
-                    Hi Hat closed
-                </button>
+                </div>
+                <div v-on:click='playHiHatClosed' class="samplePad">
+                    Hi Hat Closed
+                </div>
             </div>
             <div class="row">
-                <button v-on:click='playHiHatOpen'>
+                <div v-on:click='playHiHatOpen' class="samplePad">
                     Hi Hat Open
-                </button>
-                <button v-on:click='playRide'>
+                </div>
+                <div v-on:click='playRide' class="samplePad">
                     Ride
-                </button>
-                <button v-on:click='playCrash'>
+                </div>
+                <div v-on:click='playCrash' class="samplePad">
                     Crash
-                </button>
+                </div>
             </div>
             <div class="row">
-                <button v-on:click='playChina'>
+                <div v-on:click='playChina' class="samplePad">
                     China
-                </button>
-                <button v-on:click='playTom1'>
+                </div>
+                <div v-on:click='playTom1' class="samplePad">
                     Tom 1
-                </button>
-                <button v-on:click='playTom2'>
+                </div>
+                <div v-on:click='playTom2' class="samplePad">
                     Tom 2
-                </button>
+                </div>
             </div>
         </div>
     </div>
