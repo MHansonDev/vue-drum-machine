@@ -9,5 +9,5 @@ npm install
 
 ### Compiles for development
 ```
-yarn run serve
+npm run serve
 ```
