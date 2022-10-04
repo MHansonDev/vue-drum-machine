@@ -10,18 +10,18 @@
                     {{playing ? 'Stop' : 'Play'}}
                 </button>
 
-                <input v-model='playSpeed' />
+                <input class="speedInput" v-model='playSpeed' />
             </div>
 
-            <TrackPads :sample="bass" label="Bass" :padLength="padLength" ref="bassPads" />
-            <TrackPads :sample="snare" label="Snare" :padLength="padLength" ref="snarePads" />
-            <TrackPads :sample="hhClosed" label="HH Closed" :padLength="padLength" ref="hhClosedPads" />
-            <TrackPads :sample="hhOpen" label="HH Open" :padLength="padLength" ref="hhOpenPads" />
-            <TrackPads :sample="ride" label="Ride" :padLength="padLength" ref="ridePads" />
-            <TrackPads :sample="crash" label="Crash" :padLength="padLength" ref="crashPads" />
-            <TrackPads :sample="china" label="China" :padLength="padLength" ref="chinaPads" />
-            <TrackPads :sample="tom1" label="Tom1" :padLength="padLength" ref="tom1Pads" />
-            <TrackPads :sample="tom2" label="Tom2" :padLength="padLength" ref="tom2Pads" />
+            <TrackPads :sample="bass" label="Bass" :padLength="padLength" :padIndex="padIndex" ref="bassPads" />
+            <TrackPads :sample="snare" label="Snare" :padLength="padLength" :padIndex="padIndex" ref="snarePads" />
+            <TrackPads :sample="hhClosed" label="HH Closed" :padLength="padLength" :padIndex="padIndex" ref="hhClosedPads" />
+            <TrackPads :sample="hhOpen" label="HH Open" :padLength="padLength" :padIndex="padIndex" ref="hhOpenPads" />
+            <TrackPads :sample="ride" label="Ride" :padLength="padLength" :padIndex="padIndex" ref="ridePads" />
+            <TrackPads :sample="crash" label="Crash" :padLength="padLength" :padIndex="padIndex" ref="crashPads" />
+            <TrackPads :sample="china" label="China" :padLength="padLength" :padIndex="padIndex" ref="chinaPads" />
+            <TrackPads :sample="tom1" label="Tom 1" :padLength="padLength" :padIndex="padIndex" ref="tom1Pads" />
+            <TrackPads :sample="tom2" label="Tom 2" :padLength="padLength" :padIndex="padIndex" ref="tom2Pads" />
 
         </div>
     </div>
@@ -30,6 +30,7 @@
 <script>
 
 import TrackPads from './track-pads/track-pads.vue';
+
 const bass = require('../../assets/Bass.mp3');
 const snare = require('../../assets/Snare.mp3');
 const hhClosed = require('../../assets/Hi Hat Closed.mp3');
@@ -47,7 +48,7 @@ let padIndex = 0;
 let playSpeed = 250;
 
 export default {
-    name: 'Sequencer',
+    name: 'MySequencer',
     data: () => ({
         bass,
         snare,
@@ -89,6 +90,15 @@ export default {
                 clearInterval(interval);
                 this.padIndex = 0;
             }
+        },
+
+        sampleTriggered(label) {
+            this.$parent.sampleTriggered(label);
+        },
+
+        increment() {
+            this.$store.commit('increment');
+            console.log(this.$store.state.count)
         }
     },
     watch: {

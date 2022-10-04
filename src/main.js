@@ -1,8 +1,22 @@
-import Vue from 'vue'
+import { createApp } from 'vue'
+import Vuex from 'vuex';
 import App from './App.vue'
 
-Vue.config.productionTip = false
+// Vue.use(Vuex)
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app')
+const store = new Vuex.Store({
+    state() {
+        return {
+            count: 0
+        }
+    },
+    mutations: {
+        increment(state) {
+            state.count++
+        }
+    }
+})
+
+const app = createApp(App);
+app.use(store);
+app.mount('#app')
