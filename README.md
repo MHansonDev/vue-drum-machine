@@ -1,4 +1,5 @@
 # vue-drum-machine
+ - EC2 Instance: http://3.89.62.191/vue-drum-machine/
 
 ## Project setup
 ```
